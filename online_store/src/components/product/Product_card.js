@@ -1,10 +1,13 @@
 import iconBasket from '../../icon/iconBasket.svg'
 import { cart } from '../../bd/cart'
+import { useContext } from 'react';
 
 function Product_card(props) {
 
+    const cardToCart = useContext(cart)
+
     const addCart = () => {
-        cart.push(props);
+        cardToCart.push(props);
     }
 
     return (

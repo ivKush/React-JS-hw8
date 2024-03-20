@@ -6,20 +6,20 @@ import DeliveryCart from '../components/cart/DeliveryCart';
 // import TotallSell from '../components/cart/TotallSell';
 import Subscribe from "../components/subscribe/Subscribe";
 import Footer from "../components/Footer";
+import { useContext, useState } from 'react';
 import { cart } from '../bd/cart';
-import { useState } from 'react';
 
 
 function CartPage() {
 
-    const [cartCurrent, setCartCurrent] = useState(cart)
+    const cartTotal = useContext(cart)
 
     const [quant, setQuant] = useState()
 
     let subTotal = [];
 
     function total(value, product) {
-        for (const i of cartCurrent) {
+        for (const i of cartTotal) {
             if (i.id === product.id) {
                 let subValue = value * product.price;
                 subTotal.splice(i.id - 1, 1, subValue)
@@ -30,7 +30,7 @@ function CartPage() {
     }
 
     function clearCart() {
-        setCartCurrent(cart.splice(0))
+        cartTotal.splice(0)
         setQuant(0);
     }
 
@@ -44,7 +44,7 @@ function CartPage() {
             </section>
             <section class="cart centering">
                 <div class="cart-left ">
-                    {cartCurrent.map(elem => <CardsCart product={elem} total={total} />)}
+                    {cartTotal.map(elem => <CardsCart product={elem} total={total} />)}
                     <div class="cart-left-buttons">
                         <button onClick={clearCart} class="cart-left-buttons-btn">
                             <p>CLEAR SHOPPING CART</p>

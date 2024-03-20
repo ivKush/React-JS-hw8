@@ -24,7 +24,7 @@ function CardsCart(props) {
 
     return (
         <div class="cart-left-cards">
-            <img src={cartCurrent.img} alt="img" class="cart-imgBox" />
+            <img src={cartCurrent.url} alt="img" class="cart-imgBox" />
             <div class="cart-left-specification">
                 <div class="cart-left-specification-title">
                     <p>{cartCurrent.productName}
