@@ -30,7 +30,7 @@ function CartPage() {
         for (const i of cartCurrent) {
             if (i.id === product.id) {
                 let subValue = value * product.price;
-                subTotal.splice(i.id, 1, subValue)
+                subTotal.splice(i.id - 1, 1, subValue)
                 console.log(subTotal);
             }
         }

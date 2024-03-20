@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
 import { cart } from '../../bd/cart';
-// import { clearCurrentCart } from '../../pages/cartPage'
 
 // export const TotalSellContext = createContext(2)
 
@@ -13,7 +12,6 @@ function CardsCart(props) {
         setCartCurrent(cart.splice(0, 1))
     }
 
-    // const [quantity, setQuantity] = useState(1);
     // const [totallSell, setTotallSell] = useState(useContext(Context));
 
     const [value, setValue] = useState(1)
@@ -47,7 +45,6 @@ function CardsCart(props) {
                 </div>
                 <div class="cart-left-specification-inputBox">
                     <p>Quantity: </p>
-                    {/* <input value={quantity} onChange={(e) => props.setQuantity(e.target.value)} class="cart-left-specification-inputBox-input" type="number" /> */}
                     <input value={value} onChange={inputQuantity} class="cart-left-specification-inputBox-input" type="number" />
                 </div>
             </div>
