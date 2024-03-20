@@ -23,14 +23,18 @@ function CartPage() {
     }
     
     const [quant, setQuant] = useState()
-    const [quant2, setQuant2] = useState()
     
-    function total(elem) {
-        // const subTotal = [];
-        // subTotal.push(elem);
-        // console.log(subTotal);
-        // setQuant(subTotal.map(el => setQuant(el)));
-        setQuant(elem)
+    const subTotal = [];
+
+    function total(value, product) {
+        for (const i of cartCurrent) {
+            if (i.id === product.id) {
+                let subValue = value * product.price;
+                subTotal.splice(i.id, 1, subValue)
+                console.log(subTotal);
+            }
+        }
+        setQuant(subTotal.reduce((a, b) => a + b ))
     }
 
     return (

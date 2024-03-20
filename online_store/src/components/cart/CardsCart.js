@@ -16,17 +16,13 @@ function CardsCart(props) {
     // const [quantity, setQuantity] = useState(1);
     // const [totallSell, setTotallSell] = useState(useContext(Context));
 
-    // function quantityProduct(event) {
-
-    //     return event.target.quantity * props.product.price
-    // }
     const [value, setValue] = useState(1)
 
     function inputQuantity(e) {
         setValue(e.target.value);
     }
 
-    props.total(value * cartCurrent.price)
+    props.total(value, cartCurrent)
 
     return (
         <div class="cart-left-cards">
