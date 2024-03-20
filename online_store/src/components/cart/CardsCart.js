@@ -17,7 +17,7 @@ function CardsCart(props) {
     const [value, setValue] = useState(1)
 
     function inputQuantity(e) {
-        setValue(e.target.value);
+        setValue(Math.abs(e.target.value));
     }
 
     props.total(value, cartCurrent)
@@ -45,7 +45,11 @@ function CardsCart(props) {
                 </div>
                 <div class="cart-left-specification-inputBox">
                     <p>Quantity: </p>
-                    <input value={value} onChange={inputQuantity} class="cart-left-specification-inputBox-input" type="number" />
+                    <input
+                        type='number'
+                        min='0'
+                        value={value}
+                        onChange={inputQuantity} class="cart-left-specification-inputBox-input" />
                 </div>
             </div>
         </div>

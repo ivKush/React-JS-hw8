@@ -14,17 +14,9 @@ function CartPage() {
 
     const [cartCurrent, setCartCurrent] = useState(cart)
 
-    // function clearCurrentCart() {
-    //     cart.splice(0, 1)
-    // }
-
-    function clearCart() {
-        setCartCurrent(cart.splice(0))
-    }
-    
     const [quant, setQuant] = useState()
-    
-    const subTotal = [];
+
+    let subTotal = [];
 
     function total(value, product) {
         for (const i of cartCurrent) {
@@ -34,7 +26,12 @@ function CartPage() {
                 console.log(subTotal);
             }
         }
-        setQuant(subTotal.reduce((a, b) => a + b ))
+        setQuant(subTotal.reduce((a, b) => a + b))
+    }
+
+    function clearCart() {
+        setCartCurrent(cart.splice(0))
+        setQuant(0);
     }
 
     return (
