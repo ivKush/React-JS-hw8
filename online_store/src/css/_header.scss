@@ -1,0 +1,43 @@
+@import "vars";
+@import "mixins";
+
+.styleHeader {
+    @include backColorHeaderPromoFooter;
+}
+
+.headNav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 19px;
+
+    .hoverIcon:hover path{
+        fill: $ColorSelectSite;
+    }
+
+    &_left {
+        display: flex;
+        gap: 41px;
+        align-items: flex-end;
+    }
+
+    &_right {
+        display: flex;
+        gap: 33px;
+        align-items: flex-end;
+
+        &_hoverIcon:hover path{
+            fill: $ColorSelectSite;
+        }
+
+        &_basket_box {
+            // position: relative;
+        }
+
+        &_basket_num {
+            position: relative;
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import "vars";
+
+@mixin flexColumn($gap) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin backColorHeaderPromoFooter() {
+    background: $colorStyleHeaderPromoFooter;
+}
+
+@mixin hoverOpacity($hidden) {
+    &:hover {
+        opacity: $hidden;
+    }
+}

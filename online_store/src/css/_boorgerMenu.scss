@@ -1,0 +1,55 @@
+@import "mixins";
+@import "vars";
+
+.BoorgerMenu {
+    position: relative;
+
+    &-summary:hover path {
+        // content: url(icon/iconMenuPink.svg);
+        fill: $ColorSelectSite;                
+    }
+
+    &[open] path{
+        fill: $ColorSelectSite;
+    }
+}
+
+.menu {
+    position: absolute;
+    z-index: 10;
+    top: 46px;
+    left: -75px;
+    color: $colorStyleHeaderPromoFooter;
+    font-size: 14px;
+    font-weight: 700;
+    @extend %fontProduct;
+    padding: 32px;
+    background: #FFF;
+    width: calc($widthSiteDesctop * 0.18);
+
+    box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+
+    &-option {
+        color: $ColorSelectSite;
+        font-size: 14px;
+        font-weight: 400;
+        @extend %fontProduct;
+        padding-top: 20px;
+
+        &-elem {
+            color: $colorText;
+            font-size: 14px;
+            font-weight: 400;
+            @extend %fontProduct;
+            padding: 20px;
+            @include flexColumn(16px);
+
+            &-text {
+                color: $colorText;
+                font-size: 14px;
+                font-weight: 400;
+                @extend %fontProduct;
+            }
+        }
+    }
+}

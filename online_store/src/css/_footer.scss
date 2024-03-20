@@ -1,0 +1,35 @@
+@import "vars";
+
+.footer {
+    background: $colorStyleHeaderPromoFooter;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &_left_text {
+        color: $backgroundGeneral;
+        font-size: 16px;
+        font-weight: 400;
+        @extend %fontProduct
+    }
+
+    &_rigth {
+        display: flex;
+        gap: 8px;
+        padding: 8px;
+
+        &_icon {
+            padding: 8px;
+            background: $backgroundGeneral;
+            color: $colorStyleHeaderPromoFooter;
+
+            &:hover {
+                background-color: $ColorSelectSite;
+                color: $backgroundGeneral;
+                opacity: 1;
+            }
+        }
+    }
+}

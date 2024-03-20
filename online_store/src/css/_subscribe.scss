@@ -1,0 +1,118 @@
+@import "vars";
+@import "mixins";
+
+/*
+// Создание фона используя напрямую img + позиции z-index
+
+.subscribeBackground {
+    position: relative;
+}
+
+.back_img {
+    position: absolute;
+}
+
+.back_transparent {
+    position: absolute;
+}
+*/
+
+.subscribe {
+    // position: absolute;
+
+    background-image: linear-gradient(to bottom, rgba(244, 244, 244, 0.7), rgba(244, 244, 244, 0.7)), $subscribeBackground;
+
+    /*
+    // Создание фона путем наложения двух img в backgraund-е                   
+    
+    background-image: url(img/Subscribe_backgraund1.png),
+        url(img/subscribeBackground.png);
+    */
+
+    background-size: cover;
+    background-position: bottom;
+
+    display: flex;
+    gap: 223px;
+    padding-top: 97px;
+    padding-bottom: 126px;
+
+    &_left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+    }
+
+    &_img {
+        margin-bottom: 30px;
+    }
+
+    &_text {
+        text-align: center;
+        color: $colorStyleHeaderPromoFooter;
+        font-size: 20px;
+        font-weight: 400;
+        @extend %fontProduct;
+    }
+
+    &_right {
+        @include flexColumn(32px);
+        justify-content: flex-end;
+        width: 60%;
+        align-items: center;
+
+    }
+
+    &_big {
+        text-align: center;
+        color: $colorStyleHeaderPromoFooter;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 167.2%;
+    }
+
+    &_title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $colorStyleHeaderPromoFooter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 167.2%;
+    }
+
+    &_forma {
+        color: $colorStyleHeaderPromoFooter;
+        font-size: 14px;
+        font-weight: 400;
+        @extend %fontProduct;
+        
+        display: flex;
+        justify-content: center;
+
+        &_infield {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            padding: 20px;
+            border: none;
+            outline: none;
+        }
+
+        &_text {
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            padding: 20px;
+            background: $ColorSelectSite;
+            color: $backgroundGeneral;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            @extend %fontProduct;
+            border: none;
+        }
+    }
+}
