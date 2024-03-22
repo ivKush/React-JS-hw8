@@ -77,6 +77,15 @@
         bottom: 0;
     }
 
+    .filter {
+        justify-content: center;
+        gap: 16px
+    }
+    .filter-items {
+        justify-content: space-between;
+
+    }
+
     .currentProduct {
         &-text {
             padding: 0 108px;

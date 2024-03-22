@@ -6,7 +6,7 @@ function Product(props) {
     return (
         <>
             <section class="product centering">
-                {props.product.map(prod => <Product_card url={prod.url} title={prod.title} text={prod.text} price={prod.price} />)}
+                {props.product.map(prod => <Product_card key={prod.id} prod={prod} />)}
             </section>
         </>
     );

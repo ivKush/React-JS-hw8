@@ -5,7 +5,7 @@ function Promo() {
     
     return (
         <section class="promo centering">
-            {promo.map(elem => <Promo_box img={elem.urlIcon} title={elem.title} text={elem.text} />)}
+            {promo.map(elem => <Promo_box key={elem.id} img={elem.urlIcon} title={elem.title} text={elem.text} />)}
         </section>
     );
 }

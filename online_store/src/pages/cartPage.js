@@ -12,9 +12,15 @@ import { cart } from '../bd/cart';
 
 function CartPage() {
 
-    const cartTotal = useContext(cart)
+    // const cartTotal = useContext(cart)
+    const [cartTotal, setCartTotal] = useState(useContext(cart))
 
     const [quant, setQuant] = useState()
+
+    function clearCurrentCart(val) {
+        console.log(val);
+        setCartTotal(cartTotal.filter((el) => el.id !== val))
+    }
 
     let subTotal = [];
 
@@ -23,9 +29,9 @@ function CartPage() {
             if (i.id === product.id) {
                 let subValue = value * product.price;
                 subTotal.splice(i.id - 1, 1, subValue)
-                console.log(subTotal);
             }
         }
+        console.log(subTotal);
         setQuant(subTotal.reduce((a, b) => a + b))
     }
 
@@ -44,7 +50,7 @@ function CartPage() {
             </section>
             <section class="cart centering">
                 <div class="cart-left ">
-                    {cartTotal.map(elem => <CardsCart product={elem} total={total} />)}
+                    {cartTotal.map(elem => <CardsCart key={elem.id} product={elem} total={total} clearCurrentCart={clearCurrentCart} />)}
                     <div class="cart-left-buttons">
                         <button onClick={clearCart} class="cart-left-buttons-btn">
                             <p>CLEAR SHOPPING CART</p>

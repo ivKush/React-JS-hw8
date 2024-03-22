@@ -111,6 +111,11 @@
         }
     }
 
+    .filter {
+        margin: auto;
+        width: 360px;
+    }
+
     .currentProduct {
         &-name {
             margin-bottom: 32px;

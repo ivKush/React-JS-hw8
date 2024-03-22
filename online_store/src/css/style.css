@@ -1080,6 +1080,13 @@ summary::-webkit-details-marker {
     padding-right: 0;
     bottom: 0;
   }
+  .filter {
+    justify-content: center;
+    gap: 16px;
+  }
+  .filter-items {
+    justify-content: space-between;
+  }
   .currentProduct-text {
     padding: 0 108px;
   }
@@ -1232,6 +1239,10 @@ summary::-webkit-details-marker {
   .page_heading_breadCrumbs {
     margin-top: 0;
     margin-bottom: 48px;
+  }
+  .filter {
+    margin: auto;
+    width: 360px;
   }
   .currentProduct-name {
     margin-bottom: 32px;
